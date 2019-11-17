@@ -1,5 +1,4 @@
 #include "car.h"
-#include "traffic_light.h"
 #include "tr_light.h"
 #include <QApplication>
 #include <QtWidgets>
