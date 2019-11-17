@@ -16,9 +16,6 @@
 #include <cmath>
 #include <vector>
 #include <QVector>
-
-
-//#include "zagolovok.h"
 #include "car.h"
 
 class Tr_Light : public QWidget
@@ -33,8 +30,6 @@ public:
     void paintEvent(QPaintEvent*);
     void mousePressEvent(QMouseEvent *);
     void Push_Car(Car *car);
-    //void ChangeColor();
-    //void mouseDoubleClickEvent(QMouseEvent *);
 public slots:
     void ChangeColor()
     {
