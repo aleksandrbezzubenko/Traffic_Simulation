@@ -26,11 +26,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         car.cpp \
-    traffic_light.cpp
+    tr_light.cpp
 
 HEADERS += \
         car.h \
-    traffic_light.h
+    tr_light.h
 
 FORMS += \
         car.ui
