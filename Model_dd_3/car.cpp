@@ -5,8 +5,6 @@
 #include <QtWidgets>
 #include <QRect>
 #include <QPainter>
-//#include <stdlib.h>
-//#include <time.h>
 
 Car::Car(bool light, bool _x, bool _turn, bool _turn_right, int _angle)
     : speed(0), trl(light), x(_x), angle(_angle), turn(_turn), turn_right(_turn_right), color(qrand() % 256, qrand() % 256, qrand() % 256)
@@ -40,9 +38,6 @@ void Car::advance(int step)
                 continue;
             speed = 0;
         }
-        //turn = qrand() % 2;
-        //srand((unsigned)time(NULL));
-        //turn = (bool)rand() / 1;
        if (x == true)
        {
            if ((turn == true) && (this->pos().x() >= 0) && (this->pos().x() <= 10))
@@ -69,13 +64,6 @@ void Car::advance(int step)
                setPos(mapToParent(0, -(speed)));
            }
        }
-       //scene()->collidingItems(this).isEmpty() ? speed = speed : speed = 0;
-       /*if (scene()->collidingItems(this).isEmpty()) {
-           //setPos(mapToParent(0, -(2 + sin(speed)*2)));
-           setPos(mapToParent(0, 0));
-       } else {
-           setPos(mapToParent(0, 0));
-       }*/
 }
 
 QRectF Car::boundingRect() const
@@ -94,7 +82,6 @@ void Car::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 void Car::Change_Light()
 {
     trl = !trl;
-    // update();
 }
 
 
