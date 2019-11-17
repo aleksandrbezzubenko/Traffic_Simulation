@@ -6,8 +6,6 @@
 #include <QTimer>
 #include <QPainter>
 #include <ui_car.h>
-//#include "zagolovok.h"
-//#include <tr_light.h>
 
 class Tr_Light;
 
