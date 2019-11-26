@@ -7,36 +7,46 @@
 #include <QTimer>
 #include <QPainter>
 #include <QLineEdit>
-#include <QPushButton>
 #include <QWidget>
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QGraphicsItem>
-#include <QList>
+#include <QColor>
 #include <cmath>
+#include <chrono>
+#include <cstdlib>
+#include <thread>
 #include <vector>
-#include <QVector>
 #include "car.h"
 
 class Tr_Light : public QWidget
 {
 public:
     bool color;
-    Tr_Light(bool light);
+    bool crash;
+    bool pzdc;
+    int angle;
+    int yellow;
+    Tr_Light(bool light, int _angle, bool _pzdc);
     QPainter painter;
     QRect rect;
     QTimer *timer;
+    QTimer *timer_yellow;
     QVector<Car*> cars;
     void paintEvent(QPaintEvent*);
     void mousePressEvent(QMouseEvent *);
     void Push_Car(Car *car);
+    void Delete_Car();
 public slots:
+    void Yellow()
+    {
+        ++yellow;
+        update();
+    }
     void ChangeColor()
     {
         color = !color;
-        for(int i = 0; i < cars.size(); ++i) {
-            cars[i]->Change_Light();
-        }
+        yellow = 0;
         update();
     }
 };
