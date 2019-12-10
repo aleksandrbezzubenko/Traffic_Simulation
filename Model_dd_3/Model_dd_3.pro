@@ -26,11 +26,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         car.cpp \
-    tr_light.cpp
+    tr_light.cpp \
+    hight_car.cpp \
+    light_car.cpp \
+    start_menu.cpp
 
 HEADERS += \
         car.h \
-    tr_light.h
+    tr_light.h \
+    hight_car.h \
+    light_car.h \
+    start_menu.h
 
 FORMS += \
-        car.ui
+        car.ui \
+    start_menu.ui

@@ -18,16 +18,18 @@
 #include <thread>
 #include <vector>
 #include "car.h"
+#include "light_car.h"
+#include "hight_car.h"
 
 class Tr_Light : public QWidget
 {
 public:
     bool color;
     bool crash;
-    bool pzdc;
+    int _interval;
     int angle;
     int yellow;
-    Tr_Light(bool light, int _angle, bool _pzdc);
+    Tr_Light(bool light, int _angle, int timer_light);
     QPainter painter;
     QRect rect;
     QTimer *timer;
@@ -37,7 +39,13 @@ public:
     void mousePressEvent(QMouseEvent *);
     void Push_Car(Car *car);
     void Delete_Car();
+    static void Create_Car(Tr_Light *trl, QGraphicsScene *scene, int _limite_type_car);
+    static void timer_start(unsigned int interval, Tr_Light *trl, QGraphicsScene *scene, int _limite_type_car);
 public slots:
+    void Change_Timer_Create_Car(int time)
+    {
+        _interval = 1000*time;
+    }
     void Yellow()
     {
         ++yellow;
