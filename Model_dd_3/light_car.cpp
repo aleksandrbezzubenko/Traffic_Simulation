@@ -1,9 +1,9 @@
 #include "light_car.h"
 
-Light_Car::Light_Car(Tr_Light *trl, int _turn, bool _circular_motion, QGraphicsScene *_scene) : Car(trl, _turn, _circular_motion, _scene)
+Light_Car::Light_Car(Tr_Light *trl, int _turn, bool _circular_motion, QGraphicsScene *_scene) : Car(trl, _turn, _circular_motion, _scene, 1.1)
 {}
 
-Light_Car::Light_Car(int angle_car, int _turn, bool _circular_motion, QGraphicsScene *_scene) : Car(angle_car, _turn, _circular_motion, _scene)
+Light_Car::Light_Car(int angle_car, int _turn, bool _circular_motion, QGraphicsScene *_scene) : Car(angle_car, _turn, _circular_motion, _scene, 1.1)
 {}
 
 QRectF Light_Car::boundingRect() const

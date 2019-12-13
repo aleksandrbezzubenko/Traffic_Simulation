@@ -24,7 +24,6 @@ void Start_Menu::Create_Car_Without_Trl(QGraphicsScene *scene, int _limite_type_
     int turn = uid(gen);
     int type_car = uid_1(gen_1);
     int angle_car = uid_2(gen_2);
-
     if ((angle_car > 0) && (angle_car <= 20)){
         angle_car = 0;
     } else if ((angle_car > 20) && (angle_car <= 40)){
@@ -95,7 +94,6 @@ void Start_Menu::Create_Car_With_Trl(Tr_Light *trl, QGraphicsScene *scene, int _
         if (trl->angle == 270){
             car->setPos(1000, -30);
         }
-        trl->Push_Car(car);
         scene->addItem(car);
     } else {
         Hight_Car *car = new Hight_Car(trl, turn, false, scene);
@@ -111,7 +109,6 @@ void Start_Menu::Create_Car_With_Trl(Tr_Light *trl, QGraphicsScene *scene, int _
         if (trl->angle == 270){
             car->setPos(1000, -30);
         }
-        trl->Push_Car(car);
         scene->addItem(car);
     }
 }
@@ -141,23 +138,26 @@ void Start_Menu::timer_start_Without_Trl(unsigned int interval, QGraphicsScene *
 void Start_Menu::on_horizontalSlider_valueChanged(int value)
 {
     timer_trl = value;
+    ui->label_4->setText(QString::number(value, 'i', 0));
 }
 
 void Start_Menu::on_horizontalSlider_2_valueChanged(int value)
 {
     concentration_car = value;
+    ui->label_5->setText(QString::number(value, 'i', 0));
 }
 
 void Start_Menu::on_horizontalSlider_3_valueChanged(int value)
 {
     type_car = value;
+    ui->label_6->setText(QString::number(value, 'i', 0));
 }
 
 void Start_Menu::on_pushButton_clicked()
 {
     if (circular_motion){
         Start_Menu::timer_start_Without_Trl(concentration_car, scene, type_car);
-        hide();
+        view->setBackgroundBrush(QPixmap("/home/hp/Model_dd_3/images/perek_circular_motion_1.png"));
     } else {
         Tr_Light *trl_1 = new Tr_Light(false, 270, timer_trl);
         trl_1->setGeometry(100, -130, 100, 150);
@@ -175,8 +175,9 @@ void Start_Menu::on_pushButton_clicked()
         trl_4->setGeometry(-140, -210, 100, 150);
         scene->addWidget(trl_4);
         timer_start_With_Trl(concentration_car, trl_4, scene, type_car);
-        hide();
+        view->setBackgroundBrush(QPixmap("/home/hp/Model_dd_3/images/perek_n.jpg"));
     }
+    hide();
 }
 
 /*void Start_Menu::on_pushButton_2_toggled(bool checked)

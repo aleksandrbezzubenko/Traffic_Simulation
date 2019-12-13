@@ -32,6 +32,7 @@ public:
     explicit Start_Menu(QWidget *parent = 0);
     ~Start_Menu();
     QGraphicsScene *scene;
+    QGraphicsView *view;
     static void Create_Car_With_Trl(Tr_Light *trl, QGraphicsScene *scene, int _limite_type_car);
     static void Create_Car_Without_Trl(QGraphicsScene *scene, int _limite_type_car);
     static void timer_start_With_Trl(unsigned int interval, Tr_Light *trl, QGraphicsScene *scene, int _limite_type_car);
@@ -47,21 +48,11 @@ private:
     bool circular_motion;
 private slots:
     void on_horizontalSlider_valueChanged(int value);
-
     void on_horizontalSlider_2_valueChanged(int value);
-
     void on_pushButton_clicked();
-
     void on_horizontalSlider_3_valueChanged(int value);
-
-  //  void on_pushButton_2_toggled(bool checked);
-
-   // void on_pushButton_3_toggled(bool checked);
-
     void on_radioButton_clicked();
-
     void on_radioButton_2_clicked();
-
 private:
     Ui::Start_Menu *ui;
 };

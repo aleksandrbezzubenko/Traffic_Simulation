@@ -34,28 +34,11 @@ public:
     QRect rect;
     QTimer *timer;
     QTimer *timer_yellow;
-    QVector<Car*> cars;
     void paintEvent(QPaintEvent*);
     void mousePressEvent(QMouseEvent *);
-    void Push_Car(Car *car);
-    void Delete_Car();
-    static void Create_Car(Tr_Light *trl, QGraphicsScene *scene, int _limite_type_car);
-    static void timer_start(unsigned int interval, Tr_Light *trl, QGraphicsScene *scene, int _limite_type_car);
 public slots:
-    void Change_Timer_Create_Car(int time)
-    {
-        _interval = 1000*time;
-    }
-    void Yellow()
-    {
-        ++yellow;
-        update();
-    }
-    void ChangeColor()
-    {
-        color = !color;
-        yellow = 0;
-        update();
-    }
+    void Change_Timer_Create_Car(int time);
+    void Yellow();
+    void ChangeColor();
 };
 #endif // TR_LIGHT_H
