@@ -161,7 +161,6 @@ void Car::advance(int step)
                angle_in_circular_motoin_copy = 0;
                if ((!circular_motion && (this->pos().y() < 100) && (this->pos().y() > -130) && (this->pos().x() > -120) && (this->pos().x() < 110) && (angle_1 == 0))){
                    turn_right = true;
-                   setRotation(rotation() + 90);
                }
            }
            if (!circular_motion){
